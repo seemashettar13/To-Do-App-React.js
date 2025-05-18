@@ -18,13 +18,13 @@ const ToDoItem = ({todo, onToggleComplete, onDelete, onEdit}) => {
       </div>
     
  
-<div className="save-btn">
+<div>
 {isEditing ? (
         <>
           <input
             type="text" value={editedTask} onChange={(e) => setEditedTask(e.target.value)}
           />
-          <button onClick={handleSave}>Save</button>
+          <button  className="save-btn" onClick={handleSave}>Save</button>
         </>
       ) : (
         <span style={{ textDecoration: todo.isComplete ? "line-through" : "none" }}>
@@ -34,15 +34,15 @@ const ToDoItem = ({todo, onToggleComplete, onDelete, onEdit}) => {
 </div>
  
 
- <div className="edit-btn">
- <button onClick={() => setIsEditing(!isEditing)}>
+ <div>
+ <button  className="edit-btn" onClick={() => setIsEditing(!isEditing)}>
         {isEditing ? "Cancel" : "Edit"}
       </button>
  </div>
 
 
-<div className="delete-btn">
-<button onClick={() => onDelete(todo.id)}>Delete</button>
+<div >
+<button className="delete-btn" onClick={() => onDelete(todo.id)}>Delete</button>
 </div>
 
    
